@@ -22,16 +22,16 @@ public class Singleton {
         
         //Connection connection = new ConnectionDatabase(); No es posible instanciar la clase.
         
-        Connection SingletonConnection_1 = ConnectionDatabase.getConnectionDatabase();
-        Connection SingletonConnection_2 = ConnectionDatabase.getConnectionDatabase();
+        Connection singletonConnection_1 = ConnectionDatabase.getConnectionDatabase();
+        Connection singletonConnection_2 = ConnectionDatabase.getConnectionDatabase();
         
         /*Operciones sobre algun objeto*/
         connection_1.close();
-        SingletonConnection_1.close();
+        singletonConnection_1.close();
         /*Fin de operaciones*/
         
         List<Connection> connections = Arrays.asList(connection_1, connection_2);
-        List<Connection> singletonConnections = Arrays.asList(SingletonConnection_1, SingletonConnection_2);
+        List<Connection> singletonConnections = Arrays.asList(singletonConnection_1, singletonConnection_2);
         
         for(Connection connection : singletonConnections){
             if(connection.isClosed()){
@@ -41,7 +41,7 @@ public class Singleton {
             }
         }
         
-        System.out.println("\n::::::::::La clave del patron está en la incstancia, observa las rutas :::::::::::::::::::::\n");
+        System.out.println("\n::::::::::La clave del patron está en la instancia, observa las rutas :::::::::::::::::::::\n");
         
         for(Connection connection : connections){
             if(connection.isClosed()){
