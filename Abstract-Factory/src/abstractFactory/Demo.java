@@ -19,7 +19,6 @@ public class Demo {
         Application app;
         GUIFactory factory;
         String osName = System.getProperty("os.name").toLowerCase();
-        System.out.println(osName);
         if (osName.contains("mac")) {
             factory = new MacOSFactory();
             app = new Application(factory);
